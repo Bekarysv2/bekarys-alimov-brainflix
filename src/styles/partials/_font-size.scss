@@ -1,0 +1,53 @@
+// Font Sizes
+
+@mixin font-features($size, $line-height, $weight) {
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $weight;
+}
+
+//Desktop & Tablet
+
+.page-header {
+    @include font-features(33px, 44px, 700);
+}
+
+.section-header {
+    @include font-features(12px, 20px, 700);
+}
+
+.subheader {
+    @include font-features(14px, 22px, 700);
+}
+
+.body {
+    @include font-features(14px, 22px, 400);
+}
+
+.labels-buttons {
+    @include font-features(12px, 20px, 700);
+}
+
+//Mobile 
+
+.mob-page-header {
+    @include font-features(24px, 32px, 700);
+}
+
+.mob-section-header {
+    @include font-features(12px, 20px, 700);
+}
+
+.mob-subheader {
+    @include font-features(13px, 18px, 700);
+}
+
+.mob-body {
+    @include font-features(13px, 18px, 400);
+}
+
+.mob-labels-buttons {
+    @include font-features(10px, 20px, 700);
+}
+
+$mobileText: 13px;
