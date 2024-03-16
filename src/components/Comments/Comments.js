@@ -10,14 +10,16 @@ const Comments = ({video}) => {
         <section className='comments'>
             {video.comments.map((comment) => (
                 <div className="comment" key={comment.id}>
-                    <div className="comment__profile"></div>
-                    <div className="comment__container">
-                        <div className="comment__container__id">
-                            <p className="comment__container__id__name">{comment.name}</p>
-                            <p className="comment__container__id__date">{formatDate(comment.timestamp)}</p>
+                    <div className="comments__container">
+                        <div className="comments__container__profile"></div>
+                        <div className="comments__container__comment">
+                            <div className="comments__container__id">
+                                <p className="comments__container__id__name">{comment.name}</p>
+                                <p className="comments__container__id__date">{formatDate(comment.timestamp)}</p>
+                            </div>
+                            <p className="comments__content">{comment.comment}</p>
                         </div>
                     </div>
-                    <p className="comment__content">{comment.comment}</p>
                 </div>
             )
             )}

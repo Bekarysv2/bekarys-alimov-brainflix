@@ -8,3 +8,199 @@
 * {
     font-family: 'AvenirNextLTPro-Regular';
 }
+
+.active-video {
+    width: auto;
+    height: auto;
+    display: flex;
+
+    @include d.mobile {
+        padding: p.$mobRegPadding;
+        flex-direction: column;
+    }
+
+    @include d.tablet {
+        padding: p.$regPadding;
+        flex-direction: column;
+    }
+
+    @include d.desktop {
+        padding: p.$regPadding 0 p.$regPadding 10vw;
+        flex-direction: column;
+    }
+
+    &__title {
+        @include d.mobile {
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 700;
+            padding-bottom: p.$mobRegPadding;
+        }
+
+        @include d.tablet {
+            font-size: 33px;
+            line-height: 44px;
+            font-weight: 700;
+            padding-bottom: p.$regPadding;
+        }
+
+        @include d.desktop {
+            font-size: 33px;
+            line-height: 44px;
+            font-weight: 900;
+            padding-bottom: p.$regPadding;
+        }
+    }
+
+    &__details {
+        @include d.mobile {
+            border-top: 1px solid c.$divider;
+            border-bottom: 1px solid c.$divider;
+            display: flex;
+            justify-content: space-between;
+            padding: p.$mobRegPadding 0;
+        }
+
+        @include d.tablet {
+            border-bottom: 1px solid c.$divider;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include d.desktop {
+            border-bottom: 1px solid c.$divider;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__left {
+            width: 50%;
+
+            @include d.tablet {
+                display: flex;
+            }
+
+            @include d.desktop {
+                display: flex;
+            }
+
+            &__channel {
+                font-weight: 600;
+                padding-bottom: 10px;
+
+                @include d.tablet {
+                    padding-right: 33px;
+                }
+
+                @include d.desktop {
+                    padding-right: 33px;
+                }
+            }
+
+            &__date {
+                color: c.$secondaryText;
+            }
+        }
+
+        &__right {
+            display: flex;
+
+            @include d.mobile {
+                flex-direction: column;
+                padding-right: 10vw;
+            }
+
+            &__views {
+                display: flex;
+                color: c.$secondaryText;
+
+                @include d.mobile {
+                    padding-bottom: 10px;
+                }
+
+                @include d.tablet {
+                    padding-right: 53px;
+                    position: relative;
+                }
+
+                @include d.desktop {
+                    padding-right: 53px;
+                    position: relative;
+                }
+
+                &__icon {
+                    @include d.tablet {
+                        position: absolute;
+                        left: -30px;
+                    }
+
+                    @include d.desktop {
+                        position: absolute;
+                        left: -30px;
+                    }
+                }
+            }
+
+            &__likes {
+                color: c.$secondaryText;
+
+                @include d.mobile {
+                    position: relative;
+                }
+
+                @include d.tablet {
+                    display: flex;
+                    position: relative;
+                }
+
+                @include d.desktop {
+                    display: flex;
+                    position: relative;
+                }
+
+                &__number {
+                    @include d.mobile{
+                        position:absolute;
+                        bottom: 3px;
+                        right: 15px;
+                    }
+                }
+
+                &__icon {
+                    @include d.tablet {
+                        position: absolute;
+                        left: -20px;
+                    }
+
+                    @include d.desktop {
+                        position: absolute;
+                        left: -20px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__description {
+        @include d.mobile {
+            padding: p.$mobRegPadding 0;
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: 400;
+        }
+
+        @include d.tablet {
+            padding: p.$regPadding 0 0;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
+        }
+
+        @include d.desktop {
+            padding: p.$regPadding 0 0;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
+        }
+    }
+}

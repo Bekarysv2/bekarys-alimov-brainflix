@@ -1,0 +1,41 @@
+@use './styles/partials/displays' as d;
+@use './styles/partials/padding' as p;
+@use './styles/partials/colours' as c;
+@use './styles/partials/font-size' as f;
+
+.nav-bar {
+    width: 100vw;
+}
+
+.main-video {
+    width: 100vw;
+}
+
+.main-layout {
+    @include d.desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start; 
+        margin: 20px 0; 
+        margin-left: auto; 
+        margin-right: auto;
+        max-width: 1200px; 
+      }
+}
+
+.next-videos {
+    @include d.desktop {
+        border-left: 1px solid c.$divider;
+        width: 350px; 
+        padding-left: 20px; 
+        flex-shrink: 0; 
+    }
+}
+
+.main-content {
+    @include d.desktop {
+        flex-grow: 1; 
+        padding-right: 20px; 
+    }
+}

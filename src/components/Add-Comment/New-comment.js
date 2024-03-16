@@ -7,10 +7,10 @@ const NewComment = ({commentsCount}) => {
             <p className="comment-count">{commentsCount} Comments</p>
             <div className="submit-comment__container">
                 <div className="submit-comment__container__profile">
-                    <img src={Mohan}></img>
+                    <img src={Mohan} className="submit-commnet__mohan"></img>
                 </div>
                 <form className="submit-comment__container__form">
-                    <label for="comment">JOIN THE CONVERSATION</label>
+                    <label for="comment" className='submit-comment__container__form__title'>JOIN THE CONVERSATION</label>
                     <div className="submit-comment__container__form__fields">
                         <textarea placeholder="Add a new comment" name="comment" rows="4" id="comment" required></textarea>
                         <button type="submit" className="submit-comment__container__form__fields__button">COMMENT</button>

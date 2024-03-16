@@ -1,0 +1,299 @@
+.page-header {
+  font-size: 33px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+.section-header {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.subheader {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.labels-buttons {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.mob-page-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.mob-section-header {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.mob-subheader {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.mob-body {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.mob-labels-buttons {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url("../../assets/font/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Bold";
+  src: url("../../assets/font/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Demi";
+  src: url("../../assets/font/AvenirNextLTPro-Demi.otf");
+}
+* {
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+@media (max-width: 767px) {
+  .submit-comment {
+    padding: 0 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .submit-comment {
+    padding: 0 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .submit-comment {
+    padding: 24px 0 24px 10vw;
+  }
+}
+.submit-comment__container {
+  border-bottom: 1px solid #E1E1E1;
+  display: flex;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .submit-comment__container {
+    flex-direction: row;
+    padding-bottom: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .submit-comment__container {
+    padding-bottom: 24px;
+    align-items: center;
+  }
+}
+@media (min-width: 1280px) {
+  .submit-comment__container {
+    padding-bottom: 24px;
+    align-items: center;
+  }
+}
+.submit-comment__container__profile {
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .submit-comment__container__profile {
+    width: 40px;
+    height: 40px;
+    margin-top: 25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .submit-comment__container__profile {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .submit-comment__container__profile {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+  }
+}
+.submit-comment__container__form {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 767px) {
+  .submit-comment__container__form {
+    width: 90vw;
+    margin-left: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .submit-comment__container__form {
+    flex-direction: column;
+    width: calc(100% - 80px);
+    margin-left: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .submit-comment__container__form {
+    flex-direction: column;
+    width: calc(100% - 80px);
+    margin-left: 0;
+  }
+}
+.submit-comment__container__form__title {
+  color: #AFAFAF;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .submit-comment__container__form__fields {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .submit-comment__container__form__fields {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1280px) {
+  .submit-comment__container__form__fields {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.submit-comment__container__form__fields textarea {
+  width: auto;
+  height: auto;
+  background-color: #FAFAFA;
+  border: 1px solid #E1E1E1;
+  color: #323232;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .submit-comment__container__form__fields textarea {
+    margin: 5px 0 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .submit-comment__container__form__fields textarea {
+    flex-grow: 1;
+    margin-right: 10px;
+    margin: 0;
+    height: 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .submit-comment__container__form__fields textarea {
+    margin-right: 20px;
+    width: 100%;
+    height: 50px;
+    flex-grow: 1;
+  }
+}
+@media (max-width: 767px) {
+  .submit-comment__container__form__fields__button {
+    width: 100%;
+    background-color: #0095FF;
+    color: #FFFFFF;
+    border: 0px solid #0095FF;
+    border-radius: 4px;
+    height: 40px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .submit-comment__container__form__fields__button {
+    width: 20vw;
+    background-color: #0095FF;
+    color: #FFFFFF;
+    border: 0px solid #0095FF;
+    border-radius: 4px;
+    height: 40px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .submit-comment__container__form__fields__button {
+    width: 20vw;
+    background-color: #0095FF;
+    color: #FFFFFF;
+    border: 0px solid #0095FF;
+    border-radius: 4px;
+    height: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+  }
+}
+.submit-comment__container__form__fields__button:hover {
+  background-color: #0065AD;
+}
+.submit-comment__mohan {
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+
+@media (max-width: 767px) {
+  .comment-count {
+    font-size: 13px;
+    font-weight: 700;
+    padding-bottom: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .comment-count {
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .comment-count {
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
+}
+
+textarea::-moz-placeholder {
+  color: #323232;
+  font-size: 13px;
+  padding: 10px;
+}
+
+textarea::placeholder {
+  color: #323232;
+  font-size: 13px;
+  padding: 10px;
+}/*# sourceMappingURL=New-comment.css.map */

@@ -1,0 +1,119 @@
+@use '../../styles/partials/displays' as d;
+@use '../../styles/partials/padding' as p;
+@use '../../styles/partials/colours' as c;
+@use '../../styles/partials/font-size' as f;
+@use '../../styles/partials/font';
+
+
+* {
+    font-family: 'AvenirNextLTPro-Regular';
+}
+
+.comments {
+    @include d.mobile {
+    padding: 0 p.$mobRegPadding;;
+    }
+
+    @include d.tablet {
+        padding: 0 p.$regPadding;
+    }
+
+    @include d.desktop {
+        padding: p.$regPadding 0 p.$regPadding 10vw;
+    }
+
+    &__container {
+        display: flex;
+        border-bottom: 1px solid c.$divider;
+        width: 100%;
+
+        @include d.mobile {
+            padding: p.$mobRegPadding 0;
+        }
+
+        @include d.tablet {
+            padding: p.$regPadding 0;
+        }
+
+        @include d.desktop {
+            padding: p.$regPadding 0;
+        }
+
+        &__profile {
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e5e5e5; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 15px;
+
+            @include d.desktop {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        &__comment {
+            display: flex;
+            flex-direction: column;
+
+            @include d.mobile {
+                margin-left: 10px;
+                width: 80vw;
+            }
+
+            @include d.tablet {
+                margin-left: 20px;
+                width: 90vw;
+            }
+
+            @include d.desktop {
+                margin-left: 20px;
+                width: 90vw;
+            }
+        }
+
+        &__id {
+            display: flex;
+            justify-content: space-between;
+
+            &__name {
+                font-weight: 700;
+
+                @include d.desktop {
+                    font-size: 1.2rem;
+                }
+            }
+
+            &__date {
+                color: c.$secondaryText;
+
+                @include d.desktop {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    &__content {
+
+        @include d.mobile{
+            margin-top: p.$mobRegPadding;
+            line-height: 18px;
+        }
+
+        @include d.tablet {
+            margin-top: p.$regPadding;
+            line-height: 22px;
+        }
+
+        @include d.desktop {
+            margin-top: p.$regPadding;
+            line-height: 22px;
+            font-size: 1.2rem;
+        }
+    }
+}
