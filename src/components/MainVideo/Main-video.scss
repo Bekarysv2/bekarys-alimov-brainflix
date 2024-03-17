@@ -1,0 +1,34 @@
+@use '../../styles/partials/colours' as c;
+@use '../../styles/partials/displays' as d;
+
+.video-container {
+    background-color: c.$videoPlayerComp;
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+
+    @include d.tablet {
+        height: 400px;
+    }
+
+    @include d.desktop {
+        height:450px;
+    }
+}
+
+.mainVideo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: auto;
+
+    @include d.tablet {
+        aspect-ratio: 16 / 9;
+    }
+
+    @include d.desktop {
+        aspect-ratio: 16 / 9;
+    }
+}
