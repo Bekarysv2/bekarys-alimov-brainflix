@@ -94,6 +94,9 @@
         }
 
         @include d.tablet {
+            text-decoration: none;
+            text-align: center;
+            padding-top: 10px;
             width: 100%;
             background-color: c.$callToAction;
             color: c.$CTAtext;
@@ -106,6 +109,9 @@
         }
 
         @include d.desktop {
+            text-decoration: none;
+            text-align: center;
+            padding-top: 10px;
             width: 100%;
             background-color: c.$callToAction;
             color: c.$CTAtext;
@@ -126,6 +132,9 @@
     &__upload-button-mobile {
 
         @include d.mobile {
+            text-decoration: none;
+            text-align: center;
+            padding-top: 10px;
             width: 100%;
             background-color: c.$callToAction;
             color: c.$CTAtext;
