@@ -49,13 +49,13 @@
             align-items: center;
 
             @include d.mobile {
-                width: 40px;
+                width: 50px;
                 height: 40px;
                 margin-top: 25px;
             }
 
             @include d.tablet {
-                width: 60px; 
+                width: 65px; 
                 height: 60px; 
                 margin-right: 20px; 
             }
@@ -186,7 +186,7 @@
 
     &__mohan {
         width: 100%;
-        height: auto;
+        height: 100%;
         transform: scale(1);
     }
 }
