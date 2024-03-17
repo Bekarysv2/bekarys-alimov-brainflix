@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import NavigationBar from './components/Navigation-Bar/Nav-bar';
 import Home from './pages/Home/Home'; 
-// import UploadPage from './components/UploadPage/UploadPage'; 
+import UploadPage from './pages/Upload/Upload'; 
 
 const api = "https://unit-3-project-api-0a5620414506.herokuapp.com";
 const apiKey = "b54c779d-f50f-4e7f-835a-a08775c541a5";
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home videos={videos} />} />
         <Route path="/video/:videoId" element={<Home videos={videos} />} />
-        {/* <Route path="/upload" element={<UploadPage />} /> */}
+        <Route path="/upload" element={<UploadPage />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
