@@ -1,13 +1,15 @@
 import './Nav-bar.scss';
 import logo from '../../assets/logo/BrainFlix-logo.svg';
 import mohanImg from '../../assets/images/Mohan-muruge.jpg';
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom'; 
 
 const NavigationBar = () => {
-
   return (
     <nav className="nav">
-        <img src={logo} alt="BrainFlix Logo" className="nav__logo" />
+        <Link to="/">
+            <img src={logo} alt="BrainFlix Logo" className="nav__logo" />
+        </Link>
       <div className="nav__container">
           <input
             type="search"
@@ -15,16 +17,12 @@ const NavigationBar = () => {
             className="nav__search"
             id="search-input"
           ></input>
-        <button type="submit" className="nav__upload-button">
-        UPLOAD
-        </button>
+        <Link to="/upload" className="nav__upload-button">UPLOAD</Link> 
         <div className="nav__container__profile">
-          <img src={mohanImg} alt="Mohan-profile" className="nav__mohan"></img>
+          <img src={mohanImg} alt="Mohan profile" className="nav__mohan"></img>
         </div>
       </div>
-      <button type="submit" className="nav__upload-button-mobile">
-        UPLOAD
-      </button>
+        <Link to="/upload" className="nav__upload-button-mobile">UPLOAD</Link>
     </nav>
   );
 }

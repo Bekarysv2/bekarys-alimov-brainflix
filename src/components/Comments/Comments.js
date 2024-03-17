@@ -5,10 +5,10 @@ const formatDate = (timestamp) => {
     return (time.toLocaleDateString());
 }
 
-const Comments = ({video}) => {
+const Comments = ({ video }) => {
     return (
         <section className='comments'>
-            {video.comments.map((comment) => (
+            {video?.comments.map((comment) => (
                 <div className="comment" key={comment.id}>
                     <div className="comments__container">
                         <div className="comments__container__profile"></div>

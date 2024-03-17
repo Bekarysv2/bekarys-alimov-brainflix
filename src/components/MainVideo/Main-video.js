@@ -1,19 +1,24 @@
-import './Main-video.scss';
+import './Main-video.scss'; 
 
-const MainVideo = ({currentVideo}) => {
+const MainVideo = ({ currentVideo }) => {
+    if (!currentVideo) {
+        return <div>Loading video...</div>; // or any other loading state or spinner
+    }
+
     return (
         <section className="video-container">
             <video 
                 className="mainVideo"
-                width= "100%"
-                height= "auto"
-                poster= "video.image"
+                width="100%"
+                height="auto"
+                poster={currentVideo.image} // Now safely accessed
                 controls 
             >
-                <source src="" type="video/mp4" /> 
+                <source src={currentVideo.video} type="video/mp4" /> 
             </video>
         </section>
     );
 };
+
 
 export default MainVideo;
