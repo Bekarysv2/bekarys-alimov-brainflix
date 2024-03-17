@@ -2,7 +2,7 @@ import './Main-video.scss';
 
 const MainVideo = ({ currentVideo }) => {
     if (!currentVideo) {
-        return <div>Loading video...</div>; // or any other loading state or spinner
+        return <div>Loading video...</div>;
     }
 
     return (
@@ -11,7 +11,7 @@ const MainVideo = ({ currentVideo }) => {
                 className="mainVideo"
                 width="100%"
                 height="auto"
-                poster={currentVideo.image} // Now safely accessed
+                poster={currentVideo.image} 
                 controls 
             >
                 <source src={currentVideo.video} type="video/mp4" /> 

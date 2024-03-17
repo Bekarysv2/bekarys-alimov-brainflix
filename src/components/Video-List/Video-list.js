@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import './Video-list.scss';
 
 const Videolist = ({ videos, selectedVideo }) => {
-  // Use optional chaining to safely access selectedVideo.id
-  // This prevents the error if selectedVideo is undefined
+
   const newVideos = videos.filter(video => video.id !== selectedVideo?.id);
 
   return (
