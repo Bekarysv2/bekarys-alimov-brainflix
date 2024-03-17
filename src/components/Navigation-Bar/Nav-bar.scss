@@ -63,6 +63,27 @@
             width: 50%;
         }
 
+        &__searchBar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include d.mobile {
+                padding-top: 15px;    
+                width: 85%;
+            }
+            
+            @include d.tablet {
+                padding-top: 25px;
+                width: 100%;
+            }
+
+            @include d.desktop {
+                padding-top: 25px;
+                width: 100%;
+            }
+        }
+
         &__profile {
             display: flex;
             border-radius: 50%;
