@@ -13,20 +13,18 @@
     width: auto;
     height: auto;
     display: flex;
+    flex-direction: column;
 
     @include d.mobile {
         padding: p.$mobRegPadding;
-        flex-direction: column;
     }
 
     @include d.tablet {
         padding: p.$regPadding;
-        flex-direction: column;
     }
 
     @include d.desktop {
         padding: p.$regPadding 0 p.$regPadding 10vw;
-        flex-direction: column;
     }
 
     &__title {

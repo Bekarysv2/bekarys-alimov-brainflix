@@ -14,7 +14,7 @@
     height: auto;
     display: flex;
     background-color: c.$background;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid c.$divider;
     
     @include d.mobile {
         padding: p.$mobRegPadding;
@@ -47,7 +47,7 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items:center;
         
 
         @include d.mobile {
@@ -68,11 +68,12 @@
             border-radius: 50%;
             overflow: hidden;
             justify-content: center;
-            align-items: center;
+            align-items:center;
 
             @include d.mobile {
                 width: 40px;
                 height: 40px;
+                margin-left: 10px;
             }
 
             @include d.tablet {
@@ -96,7 +97,7 @@
         @include d.tablet {
             text-decoration: none;
             text-align: center;
-            padding-top: 10px;
+            padding-top: 13px;
             width: 100%;
             background-color: c.$callToAction;
             color: c.$CTAtext;
@@ -175,13 +176,18 @@ input {
     color: c.$primaryText;
     border-radius: 4px;
 
+    @include d.mobile {
+        width: 70px;
+    }
+
     @include d.tablet {
         margin-right: 20px;
+        margin-top: 25px;
+        width: 80%;
     }
 
     @include d.desktop {
         margin-right: 20px;
-        width: 100%;
     }
 }
 

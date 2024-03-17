@@ -1,0 +1,240 @@
+@use '../../styles/partials/displays' as d;
+@use '../../styles/partials/padding' as p;
+@use '../../styles/partials/colours' as c;
+@use '../../styles/partials/font-size' as f;
+@use '../../styles/partials/font';
+
+
+* {
+    font-family: 'AvenirNextLTPro-Regular';
+    color: c.$primaryText;
+}
+
+.upload {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include d.mobile {
+        padding: p.$mobRegPadding;
+    }
+
+    @include d.tablet {
+        padding: p.$regPadding;
+    }
+
+    @include d.desktop {
+        padding: p.$regPadding 10vw;
+    }
+
+    &__title {
+
+        @include d.mobile {
+            font-size: 24px;
+            font-weight: 700;
+            color: c.$primaryText;
+            padding-bottom: p.$mobRegPadding;
+        }
+
+        @include d.tablet {
+            font-size: 33px;
+            font-weight: 700;
+            padding-bottom: p.$regPadding;
+            margin-bottom: p.$regPadding;
+            border-bottom: 1px solid c.$divider;
+        }
+
+        @include d.desktop {
+            font-size: 33px;
+            font-weight: 700;
+            padding-bottom: p.$regPadding;
+            margin-bottom: p.$regPadding;
+            border-bottom: 1px solid c.$divider;
+        }
+    }
+
+    &__container {
+        @include d.desktop {
+            display: flex;
+            padding-bottom: p.$regPadding;
+        }
+    }
+
+    &__desktop-flex {
+        @include d.desktop {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin-right: 2%;
+        }
+    }
+
+    &__thumbtitle {
+        color: c.$secondaryText;
+
+        @include d.mobile {
+            font-size: 12px;
+            padding-bottom: 5px;
+            font-weight: 700;
+        }
+
+        @include d.tablet {
+            font-size: 12px;
+            padding-bottom: 5px;
+            font-weight: 700;
+        }
+
+        @include d.desktop {
+            font-size: 12px;
+            padding-bottom: 5px;
+            font-weight: 700;
+        }
+    }
+
+    &__thumbnail {
+        border-radius: 5px;
+
+        @include d.mobile {
+            width: 100%;
+            padding-bottom: p.$mobRegPadding;
+        }
+
+        @include d.tablet {
+            width: 50%;
+            padding-bottom: p.$regPadding;
+        }
+
+        @include d.desktop {
+            width: 100%;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        @include d.desktop {
+            width: 68%;
+        }
+    }
+
+    &__label {
+        color: c.$secondaryText;
+        font-size: 12px;
+        font-weight: 700;
+        padding-bottom: 10px;
+    }
+
+    &__buttons {
+        display: flex;
+
+        @include d.mobile {
+            flex-direction: column-reverse;
+        }
+
+        @include d.tablet {
+            border-top: 1px solid c.$divider;
+            padding-top: p.$regPadding;
+            justify-content: end;
+
+        }
+
+        @include d.desktop {
+            border-top: 1px solid c.$divider;
+            padding-top: p.$regPadding;
+            justify-content: end;
+        }
+
+        &__cancel {
+
+            background-color: white;
+            color: c.$callToAction;
+            border: none;
+            font-weight: 700;
+
+            @include d.mobile {
+                font-size: 10px;
+                width: auto;
+                margin: p.$mobRegPadding 0;
+            }
+
+            @include d.tablet {
+                width: 25%;
+            }
+
+            @include d.desktop {
+                width: 15%;
+            }
+        }
+
+        &__submit {
+            background-color: c.$callToAction;
+            color: c.$CTAtext;
+            border: 0px solid c.$callToAction;
+            border-radius: 4px;
+            height: 40px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+
+            @include d.tablet { 
+                width: 25%;
+            }
+
+            @include d.desktop {
+                width: 15%;
+            }
+        }
+
+        &__submit:hover {
+            background-color: c.$CTAhover;
+        }
+    }
+}
+
+input {
+
+    @include d.mobile {
+        margin-bottom: p.$mobRegPadding;
+        width: 100%;
+    }
+
+    @include d.tablet {
+        width: 100%;
+        margin-bottom: p.$regPadding;
+        margin-top: 0;
+    }
+
+    @include d.desktop {
+        width: 100%;
+        margin-bottom: p.$regPadding;
+    }
+}
+
+textarea {
+    background-color: c.$formFieldbg;
+    border: 1px solid c.$divider;
+    border-radius: 5px;
+    color: c.$primaryText;
+
+
+    @include d.mobile {
+        margin-bottom: p.$mobRegPadding;
+        height: 100px;
+    }
+
+    @include d.tablet {
+        margin-bottom: p.$regPadding;
+        height: 100px;
+    }
+
+    @include d.desktop {
+        height: 72px;
+    }
+}
+
+textarea::placeholder {
+    color: c.$primaryText;
+    font-size: f.$mobileText;
+    padding: 10px;
+}
