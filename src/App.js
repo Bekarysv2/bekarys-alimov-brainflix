@@ -1,39 +1,35 @@
-import { useState } from 'react';
-import './App.css'; 
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import axios from 'axios';
 import NavigationBar from './components/Navigation-Bar/Nav-bar';
-import MainVideo from './components/MainVideo/Main-video';
-import VideoDetails from './components/VideoDetails/VideoDetails';
-import Comments from './components/Comments/Comments';
-import NewComment from './components/Add-Comment/New-comment';
-import Videolist from './components/Video-List/Video-list';
+import Home from './pages/Home/Home'; 
+import UploadPage from './pages/Upload/Upload'; 
 
-import VideoJson from './data/video-details.json';
+const api = "https://unit-3-project-api-0a5620414506.herokuapp.com";
+const apiKey = "b54c779d-f50f-4e7f-835a-a08775c541a5";
 
 function App() {
-  const [videos, setVideos] = useState(VideoJson);
-  const [selectedVideo, setSelectedVideo] = useState(VideoJson[0]);
-  const [comments, setComments] = useState(VideoJson[0].comments);
+  const [videos, setVideos] = useState([]);
 
-  const clickHandler = (video) => {
-    setSelectedVideo(video);
-    setComments(video.comments);
-  }
+  useEffect(() => {
+    axios.get(`${api}/videos?api_key=${apiKey}`)
+      .then(response => {
+        setVideos(response.data);
+      })
+      .catch(error => console.error("Failed to fetch videos", error));
+  }, []);
 
   return (
-    <>
-      <NavigationBar className="nav-bar" /> 
-    <MainVideo className="main-video" video={selectedVideo} /> 
-    <div className="main-layout">
-      <div className="main-content"> 
-        <VideoDetails video={selectedVideo} />
-        <NewComment commentsCount={comments.length} />
-        <Comments video={selectedVideo} />
-      </div>
-      <aside className="next-videos"> 
-        <Videolist videos={videos} clickHandler={clickHandler} selectedVideo={selectedVideo} />
-      </aside>
-    </div>
-  </>
+    <BrowserRouter>
+      <NavigationBar className="nav-bar" />
+      <Routes>
+        <Route path="/" element={<Home videos={videos} />} />
+        <Route path="/video/:videoId" element={<Home videos={videos} />} />
+        <Route path="/upload" element={<UploadPage />} />
+        <Route path="*" element={<Navigate replace to="/" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
