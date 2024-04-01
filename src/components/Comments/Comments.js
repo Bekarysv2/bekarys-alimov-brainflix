@@ -5,19 +5,19 @@ const formatDate = (timestamp) => {
     return (time.toLocaleDateString());
 }
 
-const Comments = ({ video }) => {
+const Comments = ({ comments }) => {
     return (
         <section className='comments'>
-            {video?.comments.map((comment) => (
-                <div className="comment" key={comment.id}>
+            {comments.map((comments) => (
+                <div className="comment" key={comments.id}>
                     <div className="comments__container">
                         <div className="comments__container__profile"></div>
                         <div className="comments__container__comment">
                             <div className="comments__container__id">
-                                <p className="comments__container__id__name">{comment.name}</p>
-                                <p className="comments__container__id__date">{formatDate(comment.timestamp)}</p>
+                                <p className="comments__container__id__name">{comments.name}</p>
+                                <p className="comments__container__id__date">{formatDate(comments.timestamp)}</p>
                             </div>
-                            <p className="comments__content">{comment.comment}</p>
+                            <p className="comments__content">{comments.comment}</p>
                         </div>
                     </div>
                 </div>
