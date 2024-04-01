@@ -1,7 +1,7 @@
 import './Main-video.scss'; 
 
-const MainVideo = ({ currentVideo }) => {
-    if (!currentVideo) {
+const MainVideo = ({ video }) => {
+    if (!video) {
         return <div>Loading video...</div>;
     }
 
@@ -11,10 +11,10 @@ const MainVideo = ({ currentVideo }) => {
                 className="mainVideo"
                 width="100%"
                 height="auto"
-                poster={currentVideo.image} 
+                poster={video.image} 
                 controls 
             >
-                <source src={currentVideo.video} type="video/mp4" /> 
+                <source src={video.video} type="video/mp4" /> 
             </video>
         </section>
     );
