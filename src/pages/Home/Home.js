@@ -90,7 +90,9 @@ const fetchVideos = async () => {
 
     return (
         <>
-            <MainVideo video={selectedVideo} />
+            <div className='MainVideo-container'>
+                <MainVideo video={selectedVideo} />
+            </div>
             <div className="main-layout">
                 <div className="main-content"> 
                     <VideoDetails video={selectedVideo} />

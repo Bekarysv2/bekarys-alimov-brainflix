@@ -1,0 +1,31 @@
+@use '../../styles/partials/displays' as d;
+@use '../../styles/partials/padding' as p;
+@use '../../styles/partials/colours' as c;
+@use '../../styles/partials/font-size' as f;
+
+
+.MainVideo-container {
+    width: 100%;
+}
+
+.main-layout {
+    @include d.desktop {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+      }
+}
+
+.main-content {
+    @include d.desktop {
+        width:90%;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+.next-videos {
+    @include d.desktop {
+        width: 30%;
+    }
+}
