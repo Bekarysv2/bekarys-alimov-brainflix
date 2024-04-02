@@ -11,7 +11,7 @@ const UploadPage = () => {
         alert('Video uploading');
         navigate('/');
     };
-
+    
     const handleCancel = () => {
         navigate(-1);
     }
@@ -49,7 +49,7 @@ const UploadPage = () => {
     
             <div className="upload__buttons">
               <button type="button" className="upload__buttons__cancel" onClick={handleCancel}>CANCEL</button>
-              <button type="submit" className="upload__buttons__submit">PUBLISH</button>
+              <button type="submit" className="upload__buttons__submit" onClick={handleSubmit}>PUBLISH</button>
             </div>
         </div>
       );
