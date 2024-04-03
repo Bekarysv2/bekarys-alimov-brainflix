@@ -1,6 +1,7 @@
 import './Nav-bar.scss';
 import logo from '../../assets/logo/BrainFlix-logo.svg';
 import mohanImg from '../../assets/images/Mohan-muruge.jpg';
+import upload from '../../assets/icons/upload.svg'
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 
@@ -25,6 +26,7 @@ const NavigationBar = () => {
         </div>
       </div>
         <Link to="/upload" className="nav__upload-button-mobile">UPLOAD</Link>
+        
     </nav>
   );
 }

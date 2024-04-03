@@ -29,7 +29,7 @@
     }
 
     @include d.desktop {
-        padding: p.$paddingHeadlineB 10vw;
+        padding: p.$regPadding 10vw;
         justify-content: space-between;
         align-items: center;
     }
@@ -110,6 +110,7 @@
     }
 
     &__upload-button {
+        position: relative;
 
         @include d.mobile {
             display: none;
@@ -216,4 +217,12 @@ input::placeholder {
     color: c.$primaryText;
     font-size: f.$mobileText;
     padding-left: 10px;
+}
+
+.upload-icon {
+    position:absolute;
+
+    @include d.desktop {
+        right: 570px;
+    }
 }

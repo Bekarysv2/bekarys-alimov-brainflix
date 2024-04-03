@@ -54,7 +54,6 @@ const fetchVideos = async () => {
           const videoDetailsResponse = await fetchVideoDetails(videoListResponse[0].id)
           setSelectedVideo(videoDetailsResponse);
         }
-  
         setIsLoading(false);
       }
       

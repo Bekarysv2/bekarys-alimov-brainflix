@@ -72,7 +72,7 @@
 
             @include d.desktop {
                 margin-left: 20px;
-                width: 90vw;
+                width: 40vw;
             }
         }
 
@@ -84,7 +84,7 @@
                 font-weight: 700;
 
                 @include d.desktop {
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
             }
 
@@ -92,7 +92,7 @@
                 color: c.$secondaryText;
 
                 @include d.desktop {
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
             }
         }
@@ -113,7 +113,7 @@
         @include d.desktop {
             margin-top: p.$regPadding;
             line-height: 22px;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
     }
 }
