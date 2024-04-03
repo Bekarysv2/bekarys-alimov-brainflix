@@ -11,23 +11,23 @@ import axios from 'axios';
 const api = "https://unit-3-project-api-0a5620414506.herokuapp.com";
 const apiKey = "?api_key=b54c779d-f50f-4e7f-835a-a08775c541a5";
 
+const fetchVideoDetails = async (videoId) => {
+  try {
+    const response = await axios.get(api + "/videos/" + videoId + apiKey);
+    const videoDetailsResponse = response.data;
+    return videoDetailsResponse;
+  } catch (error) {
+    console.error("fetchVideoDetails failed", error)
+  }
+}
+
 const fetchVideos = async () => {
     try {
       const response = await axios.get(api + "/videos" + apiKey);
       const videoListResponse = response.data;
       return videoListResponse;
     } catch (error) {
-      console.log("fetchVideos api call failed")
-    }
-  }
-  
-  const fetchVideoDetails = async (videoId) => {
-    try {
-      const response = await axios.get(api + "/videos/" + videoId + apiKey);
-      const videoDetailsResponse = response.data;
-      return videoDetailsResponse;
-    } catch (error) {
-      console.log("fetchVideoDetails api call failed")
+      console.error("fetchVideos failed", error)
     }
   }
   
@@ -38,8 +38,6 @@ const fetchVideos = async () => {
     const [sideVideos, setSideVideos] = useState([]);
     const [commentCount, setCommentCount] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
-  
-  
     const { videoId } = useParams();
   
   
@@ -48,11 +46,9 @@ const fetchVideos = async () => {
         const videoListResponse = await fetchVideos();
         setvideoList(videoListResponse);
   
-  
         if (videoId) {
            const videoDetailsResponse = await fetchVideoDetails(videoId);
            setSelectedVideo(videoDetailsResponse);
-  
            
         } else {
           const videoDetailsResponse = await fetchVideoDetails(videoListResponse[0].id)
@@ -60,12 +56,9 @@ const fetchVideos = async () => {
         }
   
         setIsLoading(false);
-  
       }
       
       fetchData()
-  
-  
     }, [videoId]);
   
   
@@ -81,9 +74,7 @@ const fetchVideos = async () => {
         }
   
     }, [selectedVideo])
-  
-  
-   
+
     if (isLoading === true) {
       return <p>Loading...</p>;
     }
