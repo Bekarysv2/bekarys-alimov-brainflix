@@ -1,0 +1,34 @@
+@use '../../styles/partials/displays' as d;
+@use '../../styles/partials/padding' as p;
+@use '../../styles/partials/colours' as c;
+@use '../../styles/partials/font-size' as f;
+
+.video-container {
+    width: 100%;
+    background-color: c.$videoPlayerComp;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    @include d.tablet {
+        max-height: 500px;
+    }
+
+    @include d.desktop {
+        max-height: 750px;
+    }
+}
+
+.mainVideo {
+    overflow: hidden;
+
+    @include d.tablet {
+        width: 80vw;
+    }
+
+    @include d.desktop {
+        width: 75vw;
+        
+    }
+    
+}
