@@ -8,12 +8,11 @@ import Videolist from '../../components/Video-List/Video-list';
 import { useParams } from 'react-router-dom'; 
 import axios from 'axios';
 
-const api = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-const apiKey = "?api_key=b54c779d-f50f-4e7f-835a-a08775c541a5";
+const api = "http://localhost:8080/";
 
 const fetchVideoDetails = async (videoId) => {
   try {
-    const response = await axios.get(api + "/videos/" + videoId + apiKey);
+    const response = await axios.get(api + "videos/" + videoId);
     const videoDetailsResponse = response.data;
     return videoDetailsResponse;
   } catch (error) {
@@ -23,7 +22,7 @@ const fetchVideoDetails = async (videoId) => {
 
 const fetchVideos = async () => {
     try {
-      const response = await axios.get(api + "/videos" + apiKey);
+      const response = await axios.get(api + "videos");
       const videoListResponse = response.data;
       return videoListResponse;
     } catch (error) {
@@ -51,7 +50,8 @@ const fetchVideos = async () => {
            setSelectedVideo(videoDetailsResponse);
            
         } else {
-          const videoDetailsResponse = await fetchVideoDetails(videoListResponse[0].id)
+          const firstVideo = videoListResponse[0].id;
+          const videoDetailsResponse = await fetchVideoDetails(firstVideo)
           setSelectedVideo(videoDetailsResponse);
         }
         setIsLoading(false);
@@ -63,7 +63,7 @@ const fetchVideos = async () => {
   
     useEffect(() => {
         if (isLoading === false) {
-          const selectedVideoComments = selectedVideo.comments;
+          const selectedVideoComments = selectedVideo.comments || [];
           setCommentCount(selectedVideoComments.length);
       
           const filteredVideos = videoList.filter((video) => {
@@ -72,7 +72,7 @@ const fetchVideos = async () => {
           setSideVideos(filteredVideos);
         }
   
-    }, [selectedVideo])
+    }, [selectedVideo, isLoading, videoList])
 
     if (isLoading === true) {
       return <p>Loading...</p>;
