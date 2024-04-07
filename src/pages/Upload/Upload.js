@@ -14,7 +14,7 @@ const UploadPage = () => {
         e.preventDefault(); 
 
         try {
-          await axios.post('http://localhost:8080/upload/', {
+          await axios.post('http://localhost:8080/videos/', {
             title: videoTitle,
             description: videoDesc,
           });
