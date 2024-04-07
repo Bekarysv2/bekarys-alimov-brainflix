@@ -1,15 +1,30 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
 import {useNavigate} from 'react-router-dom';
 import thumbnailImage from '../../assets/images/Upload-video-preview.jpg'
 import './Upload.scss';
+import axios from 'axios';
 
 const UploadPage = () => {
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const [videoTitle, setVideoTitle] = useState('');
+    const [videoDesc, setVideoDesc] = useState('');
+
+    const handleSubmit = async (e) => {
         e.preventDefault(); 
-        alert('Video uploading');
-        navigate('/');
+
+        try {
+          await axios.post('http://localhost:8080/upload/', {
+            title: videoTitle,
+            description: videoDesc,
+          });
+          alert('Video uploaded');
+          navigate('/');
+
+        } catch (error) {
+          console.error('Failed to upload video', error);
+          alert('Failed to upload video')
+        }
     };
     
     const handleCancel = () => {
@@ -33,6 +48,8 @@ const UploadPage = () => {
                 className="upload__input"
                 placeholder="Add a title to your video"
                 required
+                value={videoTitle}
+                onChange={e => setVideoTitle(e.target.value)}
                 />
         
                 <label htmlFor="videoDesc" className="upload__label">ADD A VIDEO DESCRIPTION</label>
@@ -42,6 +59,8 @@ const UploadPage = () => {
                 className="upload__textarea"
                 placeholder="Add a description to your video"
                 required
+                value={videoDesc}
+                onChange={e => setVideoDesc(e.target.value)}
                 ></textarea>
             </form>
             </div>
